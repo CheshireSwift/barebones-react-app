@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "transpile": "babel src --out-dir dist --presets react-app/prod",
-    "transpile:watch": "babel src --out-dir dist --presets react-app/dev --watch",
+    "transpile": "babel src --out-dir dist",
+    "transpile:watch": "babel src --out-dir dist --watch",
     "bundle": "rollup dist/App.js --file bundle.js --format iife",
     "bundle:watch": "rollup dist/App.js --file bundle.js --format iife --watch",
     "build": "npm run transpile && npm run bundle",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
+    "babel-preset-react": "^6.24.1",
     "concurrently": "^3.6.1",
     "http-server": "^0.11.1",
     "rollup": "^0.63.4"
