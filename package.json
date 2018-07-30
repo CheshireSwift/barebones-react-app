@@ -2,10 +2,26 @@
   "name": "react-building-blocks",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "transpile": "babel src --out-dir dist --presets react-app/prod",
+    "transpile:watch": "babel src --out-dir dist --presets react-app/dev --watch",
+    "bundle": "rollup dist/App.js --file bundle.js --format iife",
+    "bundle:watch": "rollup dist/App.js --file bundle.js --format iife --watch",
+    "build": "npm run transpile && npm run bundle",
+    "dev": "concurrently -c magenta,magenta,cyan -n transpile,bundle,server 'npm run transpile:watch' 'npm run bundle:watch' http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "concurrently": "^3.6.1",
+    "http-server": "^0.11.1",
+    "rollup": "^0.63.4"
+  }
 }
