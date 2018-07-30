@@ -9,7 +9,8 @@
     "bundle:watch": "rollup dist/App.js --file bundle.js --format iife --watch",
     "build": "npm run transpile && npm run bundle",
     "dev": "concurrently -c magenta,magenta,cyan -n transpile,bundle,server 'npm run transpile:watch' 'npm run bundle:watch' http-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build"
   },
   "author": "",
   "license": "ISC",
